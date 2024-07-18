@@ -16,12 +16,12 @@ pipeline{
             steps {
                 sh 'ls -ltr'
                 // build the project and create a JAR file
-                sh 'mvn clean package'
+                sh './mvnw clean package'
             }
         }
         stage('Static Code Analysis') {
             environment {
-                SONAR_URL = "http://34.230.20.254:9000"
+                SONAR_URL = "http://50.19.149.57:9000"
             }
             steps {
                 withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
