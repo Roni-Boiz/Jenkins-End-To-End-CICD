@@ -31,7 +31,7 @@ pipeline{
         }
         stage('Build and Push Docker Image') {
             environment {
-                DOCKER_IMAGE = "don361/spring-jenkins-cicd-agent:${BUILD_NUMBER}"
+                DOCKER_IMAGE = "don361/spring-jenkins-ultimate-cicd:${BUILD_NUMBER}"
                 // DOCKERFILE_LOCATION = "spring-boot-app/Dockerfile"
                 REGISTRY_CREDENTIALS = credentials('docker-cred')
             }
@@ -54,7 +54,7 @@ pipeline{
                 withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                     sh '''
                         git config user.email "2019cs155@stu.ucsc.lk"
-                        git config user.name "Ronila Sanjula"
+                        git config user.name "Roni-Boiz"
                         BUILD_NUMBER=${BUILD_NUMBER}
                         sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" manifest/deployment.yaml
                         git add manifest/deployment.yaml
