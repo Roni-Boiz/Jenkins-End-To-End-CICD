@@ -1,16 +1,8 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 
-# Install necessary packages
+# Install Maven
 RUN apk update && \
-    apk add --no-cache curl bash git openssl && \
-    apk add --no-cache openrc
-
-# Install Jenkins
-RUN apk add --no-cache jenkins
-
-# Create Jenkins directory and set permissions
-RUN mkdir -p /var/jenkins_home && \
-    chown -R jenkins:jenkins /var/jenkins_home
+    apk add --no-cache maven
 
 # Simply the artifact path
 ARG artifact=target/spring-boot-app.jar
