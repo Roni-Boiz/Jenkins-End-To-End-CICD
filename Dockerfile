@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:alpine-jre
+FROM openjdk:17-jdk-alpine
 
 # Install Maven
 RUN apk update && \
