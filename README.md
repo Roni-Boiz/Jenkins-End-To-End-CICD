@@ -32,7 +32,7 @@ The above maven target stroes the artifacts to the `target` directory. You can e
 ### Execute locally (Java 11 needed) and access the application on http://localhost:8080
 
 ```
-$ java -jar target/spring-boot-web.jar
+$ java -jar target/spring-boot-app.jar
 ```
 
 ### The Docker way
